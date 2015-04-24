@@ -50,6 +50,22 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
       templateUrl: 'home/results.html',
       controller: "ResultsListController"
     })
+    .state('store', {
+      url: '/store',
+      abstract: true,
+      templateUrl: 'home/index.html',
+      controller: "homeController"
+    })
+    .state('store.view', {
+      url: '/:id/info',
+      templateUrl: 'store/view.html',
+      controller: "StoreViewController"
+    })
+    .state('home.map', {
+      url: '/:id/map',
+      templateUrl: 'store/map.html',
+      controller: "ResultsListController"
+    })
     .state('widgets', {
       url: '/widgets',
       abstract: true,
