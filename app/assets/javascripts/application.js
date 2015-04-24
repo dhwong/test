@@ -57,7 +57,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
       controller: "homeController"
     })
     .state('store.view', {
-      url: '/:id/info',
+      url: '/:store_id/info',
       templateUrl: 'store/view.html',
       controller: "StoreViewController"
     })
