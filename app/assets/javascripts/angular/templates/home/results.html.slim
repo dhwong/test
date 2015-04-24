@@ -1,0 +1,10 @@
+.results
+	div
+		h2 Here is the Search query from homeController:
+		a {{Query.string}}
+		br
+		a {{Query.lat}}  {{Query.long}}
+		
+	div ng-repeat="item in items"
+		h2 {{item.name}}
+		hr

@@ -1,0 +1,110 @@
+  body data-ng-app="NearBuy"
+    header 
+      // Navbar code
+      .navbar.navbar-inverse.navbar-fixed-top 
+        .container-fluid 
+          .navbar-header
+            button.navbar-toggle.collapsed data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand href="/"  Home
+          #bs-example-navbar-collapse-1.collpase.navbar-collapse
+            /! right navbar
+            ul.nav.navbar-nav.navbar-right 
+              li 
+                a href="#" title="Contact"  Contact
+              li
+                a data-target="#myModal" data-toggle="modal" href="#myModal"  Log-in
+              li
+                a data-target="#myRegModal" data-toggle="modal" href="#myModal"  Register
+
+      // Login modal
+      #myModal.modal.fade
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+              h4.modal-title Log-in
+            .modal-body
+              .form-group
+                label for="exampleInputEmail1"  Email address
+                input#exampleInputEmail1.form-control placeholder=("Enter email") type="email" /
+              .form-group
+                label for="exampleInputPassword1"  Password
+                input#exampleInputPassword1.form-control placeholder="Password" type="password" /
+              p.text-right
+                a href="#"  Forgot password?
+            .modal-footer
+              a.btn data-dismiss="modal" href="#"  Close
+              a.btn.btn-primary href="#"  Log-in
+
+      // Register modal
+      #myRegModal.modal.fade data-ng-controller="modalCtrl"
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+              h4.modal-title Register {{user.fname}} {{user.lname}}
+            .modal-body
+              .form-group 
+                label for="firstNameInput"  First Name
+                input#firstNameInput.form-control data-ng-model="user.fname" placeholder=("Ben") /
+              .form-group 
+                label for="lastNameInput"  Last Name
+                input#lastNameInput.form-control data-ng-model="user.lname" placeholder=("Grisz") /
+              .form-group 
+                label for="inputEmail"  Email address
+                input#inputEmail.form-control data-ng-model="user.email" placeholder=("Enter email") type="email" /
+              .form-group 
+                label for="exampleInputPassword"  Password
+                input#exampleInputPassword.form-control data-ng-model="user.password" placeholder="Password" type="password" /
+              .form-group 
+                label for="exampleInputPasswordConfirm"  Confirm Password
+                input#exampleInputPassword1.form-control data-ng-model="user.password_confirmation" placeholder="Password" type="password" /
+              .form-group 
+                lable for="isOwner" Are you a Store Owner or a User?
+                label.radio-inline
+                  input name="optradio" data-ng-model="user.isOwner" data-ng-value="true" type="radio" 
+                  | Store Owner
+                label.radio-inline
+                  input name="optradio" data-ng-model="user.isOwner" data-ng-value="false" type="radio" 
+                  | User
+            .modal-footer
+              a.btn data-dismiss="modal" href="#"  Close
+              a.btn.btn-primary ng-click="create(user)" Register
+
+    // Nearbuy logo and search bar
+    .bg
+      .pacifico.text-center NearBuy
+      .div.search-tools
+        .input-group
+          // TODO format and rest
+          input.form-control ng-model="Query.string" placeholder=("Search for...") type="text"
+          span.input-group-btn
+            button.btn.btn-default type="button" onclick="" ui-sref=".results" ui-sref-opts="{reload: true, notify: true}"Search
+
+        // search bar dropdown
+        .div.search-options
+          .col-md-3
+            button#menu1.btn.btn-default.dropdown-toggle data-toggle="dropdown" type="button" 
+              | Show Filter Options
+            ul.dropdown-menu aria-labelledby="menu1" role="menu" 
+              li role="presentation" 
+                a href="#" role="menuitem" tabindex="-1"  HTML
+              li role="presentation" 
+                a href="#" role="menuitem" tabindex="-1"  CSS
+              li role="presentation" 
+                a href="#" role="menuitem" tabindex="-1"  JavaScript
+              li.divider role="presentation" 
+              li role="presentation" 
+                a href="#" role="menuitem" tabindex="-1"  About Us
+          .col-md-1
+            a.btn col 2
+          .col-md-1
+            a.btn col 3
+
+    // ui-router injection for nested states here
+    .container-fluid
+      div ui-view=true
