@@ -2,15 +2,12 @@
  ==== Standard ====
  = require jquery
  = require bootstrap
-
  ==== Angular ====
  = require angular
-
  ==== Angular Plugins ====
  = require lodash
  = require restangular
  = require angular-ui-router
-
  = require_self
  = require_tree ./angular/templates
  = require_tree .
@@ -50,28 +47,6 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
       templateUrl: 'home/results.html',
       controller: "ResultsListController"
     })
-
-    .state('store', {
-      url: '/store',
-      abstract: true,
-      templateUrl: 'home/index.html'
-      controller: "homeController"
-    })
-    .state('store.view', {
-      url: '/:id/view',
-      templateUrl: 'store/view.html'
-    })
-    .state('store.map', {
-      url: '',
-      tempalteUrl: 'store/map.html',
-      controller: "mapController"
-    })
-    /*.state('store.review', {
-      url: '/:id/review',
-      templateUrl: '/review',
-      controller: "reviewController"
-    })*/
-
     .state('widgets', {
       url: '/widgets',
       abstract: true,
