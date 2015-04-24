@@ -1,0 +1,39 @@
+/* 
+ *= require_self
+ */
+
+
+body {
+    padding: 10px;
+}
+#map_canvas {
+    margin: 0;
+    padding: 0;
+    height: 400px;
+}
+.tabs {
+    height: 35px;
+    margin: 0;
+    width: 100%;
+}
+.tab {
+    background-color: #E4E4E4;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 10px 0 10px;
+    text-align: center;
+    width: 85px;
+    line-height: 15px;
+}
+.selected {
+    background-color: silver;
+}
+.tab_content {
+    background-color: silver;
+    height: 400px;
+}
+p {
+    padding: 10px;
+}
