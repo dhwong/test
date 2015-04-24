@@ -1,17 +1,12 @@
 app.controller('homeController', ['$scope', 'Query', function($scope, Query) {
 
-	// determine location
-	// TODO: move this to a $scope function called onclick in the html
-	var location;
-  navigator.geolocation.getCurrentPosition(showPosition, showError);
-  
   function showPosition(position) {
-    Query.lat = position.coords.latitude;
-   	Query.long = position.coords.longitude;
+    Query.latitude = position.coords.latitude;
+   	Query.longitude = position.coords.longitude;
 	}
 
-	// TODO: Make these alerts pop up in a stylized modal instead of ugly generic
 	// browser alert.
+	// TODO: Make these alerts pop up in a stylized modal instead of ugly generic
 	function showError(error) {
     switch(error.code) {
     	case error.PERMISSION_DENIED:
@@ -28,6 +23,11 @@ app.controller('homeController', ['$scope', 'Query', function($scope, Query) {
         break;
     }
 	}
+
+	// determine location
+	// TODO: move this to a $scope function called onclick in the html
+	var location;
+  navigator.geolocation.getCurrentPosition(showPosition, showError);
 
 	// Use Query factory to pass user query between states
 	$scope.Query = Query;

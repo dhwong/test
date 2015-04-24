@@ -20,3 +20,7 @@ DS_Store
 
 # Ignore any npm debug logs
 npm-debug.log
+
+# Ignoring solr stuff to prevent any future merge conflicts
+solr/*
+solr/pids/development/sunspot-solr-development.pid

@@ -1,24 +1,14 @@
 app.controller('ResultsListController', ['$scope', 'Restangular', 'Query', 'apiaryFactory',
-	function($scope, Restangular, Query) {
+	function($scope, Restangular, Query, apiaryFactory) {
 
   	$scope.Query = Query;
   	$scope.results = {};
+  	$scope.items = {};
 
-  	// Get using the existing simplified GET all on the items collection
-	 	Restangular.all("items").getList().then(function(items) {
-	 		$scope.items = items;
-	 	});
-
-	 	// Query apiary results page
-	 	$scope.postSearch = function(query) {
-	 		apiaryFactory.postSearch(query)
-	 		  .success(function() {
-	 		  	$scope.results = Query;
-	 		  })
-	 		  .error(function() {
-	 		  	alert('Apiary post unsuccesful');
-	 		  });
-	 	};
-
-
+  	// Make the post to the Search controller
+  	if (Query.query !== "") {
+	 		Restangular.all("search").post({ "search": Query }).then(function(search) {
+	 			$scope.results = search.response;
+	 		});
+  	}
 }]);

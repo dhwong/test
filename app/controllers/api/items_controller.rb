@@ -1,23 +1,26 @@
 class Api::ItemsController < Api::BaseController
+
   def index
-    # this needs added functionality
-    respond_with :api, items
+    render :json => items
   end
 
   def show
-    respond_with :api, item
+    render :json => item
   end
 
   def create
-    respond_with :api, Item.create(item_params)
+    Item.create(item_params)
+    render :json => item
   end
 
   def update
-    respond_with :api, Item.update(item_params)
+    Item.update(item_params)
+    render :json => item
   end
 
   def destroy
-    respond_with :api, item.destroy
+    item.destroy
+    render :json => { "Item deleted" }
   end
 
   private
@@ -33,4 +36,5 @@ class Api::ItemsController < Api::BaseController
     def item_params
       params.require(:item).permit(:name, :category, :brand)
     end
+    
 end
