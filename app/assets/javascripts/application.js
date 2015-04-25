@@ -53,12 +53,13 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
     .state('store', {
       url: '/store',
       abstract: true,
-      template: '<div ui-view></div>'      
+      template: 'home/index.html'
+      controller: "homeController"
     })
     .state('store.view', {
-      url: '/store/info',
+      url: '/store/view',
       templateUrl: 'store/view.html',
-      controller: "StoreViewController"
+      controller: "viewController"
     })
     .state('widgets', {
       url: '/widgets',
