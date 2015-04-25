@@ -1,39 +1,67 @@
 /* 
  *= require_self
  */
-
-
-body {
-    padding: 10px;
-}
-#map_canvas {
+ 
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    height: 400px;
+    text-align: center;
+}
+.tabs input[type=radio] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
 }
 .tabs {
-    height: 35px;
-    margin: 0;
-    width: 100%;
+    width: 650px;
+    float: none;
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 75px auto;
 }
-.tab {
-    background-color: #E4E4E4;
-    cursor: pointer;
+.tabs li {
     float: left;
-    font-size: 12px;
-    margin-right: 10px;
-    padding: 10px 0 10px;
-    text-align: center;
-    width: 85px;
-    line-height: 15px;
 }
-.selected {
-    background-color: silver;
+.tabs label {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 2px 2px 0 0;
+    color: gray;
+    position: relative;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
-.tab_content {
-    background-color: silver;
-    height: 400px;
+.tabs label:hover {
+    background: beige;
+    color: black;
 }
-p {
-    padding: 10px;
+[id^=tab]:checked + label {
+    background: beige;
+    color: black;
+    top: 0;
+}
+[id^=tab]:checked ~[id^=tab-content] {
+    display: block;
+}
+.tab-content {
+    z-index: 2;
+    display: none;
+    text-align: left;
+    width: 100%;
+    line-height: 140%;
+    padding-top: 10px;
+    background: whitesmoke;
+    padding: 15px;
+    color: black;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    box-sizing: border-box;
+    -webkit-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-duration: 0.5s;
 }

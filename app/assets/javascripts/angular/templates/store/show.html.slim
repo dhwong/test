@@ -1,5 +1,18 @@
-.content ng-app="NearBuy" ng-controller="StoreViewController"
-  h1 {{store.name}}
-  h2 {{store.content}}
-
-  button.btn.btn-primary ui-sref="home.results" Go Back
+div ng-controller="viewController" 
+  h1 ng-model=("store.name"} {{store.name}) 
+  ul.tabs
+    li
+      input#tab1 checked="" name="tabs" type="radio" /
+      label for="tab1"  Store Info
+      #tab-content1.tab-content.animated.fadeIn
+        h2 ng-model=("store.owner"} {{store.owner}) 
+        h3 ng-model=("store.type"} {{store.type})  Store
+        p ng-model=("store.location"} {{store.location}) 
+        map#map_canvas Map holder
+    li
+      input#tab2 name="tabs" type="radio" /
+      label for="tab2"  Reviews
+      #tab-content2.tab-content.animated.fadeIn
+        | \...
+        = succeed "..." do
+          br/
