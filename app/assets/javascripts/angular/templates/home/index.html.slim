@@ -20,8 +20,22 @@
               li
                 a data-target="#myRegModal" data-toggle="modal" href="#myModal"  Register
 
-      // Login modal
+      // Contact modal
       #myModal.modal.fade
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
+              h4.modal-title Contact
+            .modal-body
+              b AppWrenchStudios
+              br/
+              p +1(234) 567-8901
+              p AppWrenchStudios@github.com
+            a.btn data-dismiss="modal" href="#"  Close
+
+      // Login modal
+      #myModal.modal.fade data-ng-controller="modalCtrl"
         .modal-dialog
           .modal-content
             .modal-header
@@ -39,23 +53,6 @@
             .modal-footer
               a.btn data-dismiss="modal" href="#"  Close
               a.btn.btn-primary href="#"  Log-in
-
-      // Contact modal
-      #myModal.modal.fade
-        .modal-dialog
-          .modal-content
-            .modal-header
-              button.close aria-hidden="true" data-dismiss="modal" type="button"  ×
-              h4.modal-title Contact
-            .modal-body
-              b AppWrenchStudios
-              br/
-              p
-                i
-                  | +1(234) 567-8901
-                  br/
-                  | AppWrenchStudios@github.com
-            a.btn data-dismiss="modal" href="#"  Close
 
       // Register modal
       #myRegModal.modal.fade data-ng-controller="modalCtrl"
