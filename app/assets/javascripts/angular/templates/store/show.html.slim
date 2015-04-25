@@ -1,18 +1,17 @@
-html ng-app="viewCtrl" 
-  div ng-controller="viewController" 
-    h1  {store.name} 
-    div ng-init=("tab = 1") 
-      li ng-class="{active:tab===1}" 
-        a href="" ng-click=("tab = 1")  Store Info
-      li ng-class="{active:tab===2}" 
-        a href="" ng-click=("tab = 2")  View Map
-      br/
-      br/
-      p ng-show=("tab === 1") 
-        section
-          h2  {store.owner} 
-          h3  {store.type} -type Store
-          p  {store.location} 
-          br/
-      p ng-show=("tab === 2") 
-        map#map_canvas ng-model="mapController"  Map holder
+div ng-controller="viewController" 
+  h1  {store.name} 
+  div ng-init=("tab = 1") 
+    li ng-class="{active:tab===1}" 
+      a href="" ng-click=("tab = 1")  Store Info
+    li ng-class="{active:tab===2}" 
+      a href="" ng-click=("tab = 2")  View Map
+    br/
+    br/
+    p ng-show=("tab === 1") 
+      section
+        h2  {store.owner} 
+        h3  {store.type} -type Store
+        p  {store.location} 
+        br/
+    p ng-show=("tab === 2") 
+      map#map_canvas ng-model="mapController"  Map holder
