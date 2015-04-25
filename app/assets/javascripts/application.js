@@ -53,8 +53,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
     .state('store', {
       url: '/store',
       abstract: true,
-      templateUrl: 'home/index.html',
-      controller: "homeController"
+      template: '<div ui-view></div>'      
     })
     .state('store.view', {
       url: '/:store_id/info',
