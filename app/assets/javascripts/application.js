@@ -52,10 +52,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
     })
     .state('store', {
       url: '/store',
+
       templateUrl: 'home/index.html'      
     })
     .state('store.view', {
-      url: '/store/view',
+      url: '/view/:store_id',
       templateUrl: 'store/view.html',
       controller: "viewController"
     })
