@@ -1,67 +1,39 @@
 /* 
  *= require_self
  */
- 
-body, html {
-    height: 100%;
-    margin: 0;
-    text-align: center;
+p {
+    font-weight: bold;
+    font-style: italic;
+    margin: 18px;
 }
-.tabs input[type=radio] {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+section {
+    background-color: whitesmoke;
 }
-.tabs {
-    width: 650px;
-    float: none;
-    list-style: none;
-    position: relative;
-    padding: 0;
-    margin: 75px auto;
-}
-.tabs li {
+li {
     float: left;
-}
-.tabs label {
-    display: block;
-    padding: 10px 20px;
-    border-radius: 2px 2px 0 0;
-    color: gray;
-    position: relative;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-.tabs label:hover {
-    background: beige;
+    background-color: white;
+    padding: 5px 19px;
+    margin: 5px 2px 5px 0px;
     color: black;
+    list-style: none;
 }
-[id^=tab]:checked + label {
-    background: beige;
-    color: black;
-    top: 0;
+li:hover, li:hover a {
+    background-color: beige;
+    color:black;
 }
-[id^=tab]:checked ~[id^=tab-content] {
-    display: block;
+li a {
+    text-decoration: none;
+    color: grey;
+    font-size: 21px;
 }
-.tab-content {
-    z-index: 2;
-    display: none;
-    text-align: left;
-    width: 100%;
-    line-height: 140%;
-    padding-top: 10px;
-    background: whitesmoke;
-    padding: 15px;
-    color: black;
-    position: absolute;
-    top: 53px;
-    left: 0;
-    box-sizing: border-box;
-    -webkit-animation-duration: 0.5s;
-    -o-animation-duration: 0.5s;
-    -moz-animation-duration: 0.5s;
-    animation-duration: 0.5s;
+li:nth-child(1) {
+    border-radius: 4px 0px 0px 4px;
+    margin-left: 1px;
+}
+li:nth-child(3) {
+    border-radius: 0px 4px 4px 0px;
+}
+.active {
+    background-color: beige;
+    font-style: italic;
 }

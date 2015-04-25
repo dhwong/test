@@ -1,18 +1,18 @@
-div ng-controller="viewController" 
-  h1  {{store.name}} 
-  ul.tabs
-    li
-      input#tab1 checked="" name="tabs" type="radio" /
-      label for="tab1"  Store Info
-      #tab-content1.tab-content.animated.fadeIn
-        h2  {{store.owner}} 
-        h3  {{store.type}}  Store
-        p  {{store.location}}
-        map#map_canvas Map holder
-    li
-      input#tab2 name="tabs" type="radio" /
-      label for="tab2"  Reviews
-      #tab-content2.tab-content.animated.fadeIn
-        | \...
-        = succeed "..." do
+html ng-app="viewCtrl" 
+  div ng-controller="viewController" 
+    h1  {store.name} 
+    div ng-init=("tab = 1") 
+      li ng-class="{active:tab===1}" 
+        a href="" ng-click=("tab = 1")  Store Info
+      li ng-class="{active:tab===2}" 
+        a href="" ng-click=("tab = 2")  View Map
+      br/
+      br/
+      p ng-show=("tab === 1") 
+        section
+          h2  {store.owner} 
+          h3  {store.type} -type Store
+          p  {store.location} 
           br/
+      p ng-show=("tab === 2") 
+        map#map_canvas ng-model="mapController"  Map holder
