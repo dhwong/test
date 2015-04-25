@@ -1,6 +1,4 @@
-var app = angular.module('viewCtrl', ['directives']);
-
-app.controller("viewController", function ($scope) {
+app.controller("viewController", ['$scope', 'Restangular', function ($scope, Restangular) {
     $scope.store = {
         name: "test store",
         owner: "joe",
