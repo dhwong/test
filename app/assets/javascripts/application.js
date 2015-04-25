@@ -56,12 +56,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Restan
       template: '<div ui-view></div>'      
     })
     .state('store.view', {
-      url: '/:store_id/info',
+      url: '/store/info',
       templateUrl: 'store/view.html',
       controller: "StoreViewController"
     })
     .state('home.map', {
-      url: '/:id/map',
+      url: '/store/map',
       templateUrl: 'store/map.html',
       controller: "ResultsListController"
     })

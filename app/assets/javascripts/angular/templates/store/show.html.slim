@@ -1,13 +1,13 @@
 div ng-controller="viewController" 
-  h1 ng-model=("store.name"} {{store.name}) 
+  h1  {{store.name}} 
   ul.tabs
     li
       input#tab1 checked="" name="tabs" type="radio" /
       label for="tab1"  Store Info
       #tab-content1.tab-content.animated.fadeIn
-        h2 ng-model=("store.owner"} {{store.owner}) 
-        h3 ng-model=("store.type"} {{store.type})  Store
-        p ng-model=("store.location"} {{store.location}) 
+        h2  {{store.owner}} 
+        h3  {{store.type}}  Store
+        p  {{store.location}}
         map#map_canvas Map holder
     li
       input#tab2 name="tabs" type="radio" /
